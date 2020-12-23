@@ -33,7 +33,6 @@ class MapScreenState extends State<MapScreen> {
           : Container(
               child: GoogleMap(
               zoomControlsEnabled: true,
-              myLocationEnabled: true,
               myLocationButtonEnabled: true,
               mapType: MapType.normal,
               initialCameraPosition: _kGooglePlex,

@@ -141,7 +141,7 @@ class _ActivityState extends State<Activity> {
                   padding: const EdgeInsets.all(16),
                   child: GoogleMap(
                     zoomControlsEnabled: true,
-                    myLocationEnabled: true,
+                    myLocationButtonEnabled: true,
                     mapType: MapType.normal,
                     initialCameraPosition: _kGooglePlex,
                     onMapCreated: (GoogleMapController controller)
