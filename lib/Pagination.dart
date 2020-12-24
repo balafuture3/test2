@@ -140,8 +140,15 @@ xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
                     Navigator.of(context).pop();
                   },
                 ),
-              ],
-            );
+                TextButton(
+                  child: Text('RETRY'),
+                  onPressed: () {
+
+                  retry();
+            Navigator.of(context).pop();
+            })]);
+
+
           },
         );
     });
@@ -422,6 +429,40 @@ xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
         ),
       ),
     );
+  }
+
+  void retry() {
+    check().then((value) {
+      if (value)
+        postRequest();
+      else
+        showDialog<void>(
+          context: context,
+          barrierDismissible: false, // user must tap button!
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text("No Internet Connection"),
+              actions: <Widget>[
+                TextButton(
+                  child: Text('OK'),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+                TextButton(
+                  child: Text('RETRY'),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                    retry();
+
+                  },
+                ),
+              ],
+            );
+          },
+        );
+
+    });
   }
 }
 
