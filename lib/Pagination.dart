@@ -405,6 +405,7 @@ xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
                                     for (int i = (page * 20) - 19;
                                         i < page * 20;
                                         i++) {
+                                      if(i<li2.list.length)
                                       users.add(User(
                                           firstName: li2.list[i].firstName,
                                           id: li2.list[i].empID.toString()));
